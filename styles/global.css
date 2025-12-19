@@ -14,41 +14,51 @@ body {
     font-family: Raleway, sans-serif;
     position: relative;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-blockquote {
+h1, h2, h3,
+h4, h5, h6, p,
+ul, ol, li, blockquote {
   margin: 0;
   padding: 0;
 }
+.overlay {
+    position: absolute;
+    /*display: none;*/
+    inset: 0;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(255,255,255,0.3);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
 .page__heading {
     position: relative;
-    z-index: 2;
     text-align: center;
+    z-index: 2;
 }
 .page__title {
+    position: relative;
     display: inline-block;
     font-size: 116px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    /*line-height: 100%;*/
-    /*letter-spacing: 3.5em;*/
     padding-top: 36px;
 }
+body:has(.page__title:hover) .overlay {
+    opacity: 1;
+    visibility: visible;
+ }
 
 .page__title::after {
     content: '*';
     font-size: 116px;
     font-weight: bold;
 }
+
 .page__title:hover::before {
     content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
     white-space: pre;
@@ -64,6 +74,7 @@ blockquote {
     font-weight: normal;
     text-transform: none;
     text-align: left;
+    z-index: 4;
 }
 .content {
     position: absolute;
