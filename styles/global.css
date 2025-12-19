@@ -36,9 +36,10 @@ ul, ol, li, blockquote {
 .page__heading {
     position: relative;
     text-align: center;
+    /*display: flex;*/
+    /*align-items: center;*/
 }
 .page__title {
-    position: relative;
     display: inline-block;
     font-size: 116px;
     font-weight: bold;
@@ -60,7 +61,7 @@ body:has(.page__title:hover) .overlay {
 .page__title:hover::before {
     content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
     white-space: pre;
-    position: absolute;
+    position: fixed;
     top: 182px;
     right: 22px;
     background-color: white;
