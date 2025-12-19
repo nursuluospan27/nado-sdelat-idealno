@@ -61,7 +61,7 @@ body:has(.page__title:hover) .overlay {
 .page__title:hover::before {
     content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
     white-space: pre;
-    position: fixed;
+    position: absolute;
     top: 182px;
     right: 22px;
     background-color: white;
